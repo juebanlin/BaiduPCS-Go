@@ -72,6 +72,9 @@ Pack() {
 
 # rice 打包静态资源
 RicePack() {
+    go get github.com/GeertJohan/go.rice
+    go get github.com/GeertJohan/go.rice/rice
+    export PATH=$GOPATH/bin:$PATH
     rice -i ./internal/pcsweb append --exec "$output/$1/$2"
 }
 
